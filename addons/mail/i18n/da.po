@@ -6,7 +6,6 @@
 # Pernille Kristensen <pernillekristensen1994@gmail.com>, 2024
 # Walther Barnett <walther@gundogpro.dk>, 2024
 # Mads Søndergaard, 2024
-# Sanne Kristensen <sanne@vkdata.dk>, 2024
 # lhmflexerp <lhm@flexerp.dk>, 2024
 # Sammi Iversen <sammi@vkdata.dk>, 2025
 # Mads Søndergaard, 2025
@@ -14,6 +13,7 @@
 # Larissa Manderfeld, 2025
 # Wil Odoo, 2025
 # Mikkel_Justesen, 2025
+# Sanne Kristensen <sanne@vkdata.dk>, 2025
 # Kira Petersen, 2025
 # 
 msgid ""
@@ -5634,7 +5634,7 @@ msgstr "Mail kanal formular"
 #. module: mail
 #: model:ir.model,name:mail.model_mail_composer_mixin
 msgid "Mail Composer Mixin"
-msgstr ""
+msgstr "Mixin til mail-editor"
 
 #. module: mail
 #. odoo-javascript
@@ -5796,7 +5796,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/mail/static/src/core/public_web/notification_item.xml:0
 msgid "Mark As Read"
-msgstr ""
+msgstr "Markér som læst"
 
 #. module: mail
 #. odoo-javascript
@@ -5834,7 +5834,7 @@ msgstr "Mærk som To do"
 #. odoo-javascript
 #: code:addons/mail/static/src/core/common/message_actions.js:0
 msgid "Mark as Unread"
-msgstr ""
+msgstr "Markér som ulæst"
 
 #. module: mail
 #. odoo-javascript
@@ -5972,7 +5972,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/mail/static/src/core/common/message_model.js:0
 msgid "Message Link Copy Failed (Permission denied?)!"
-msgstr ""
+msgstr "Meddelelsen kunne ikke kopieres (manglende adgang?)!"
 
 #. module: mail
 #: model:ir.model,name:mail.model_mail_notification
@@ -6148,7 +6148,7 @@ msgstr ""
 #. module: mail
 #: model:ir.model.fields.selection,name:mail.selection__mail_mail__failure_type__mail_email_missing
 msgid "Missing email"
-msgstr ""
+msgstr "Manglende e-mail"
 
 #. module: mail
 #: model:ir.model.fields.selection,name:mail.selection__mail_notification__failure_type__mail_email_missing
@@ -10812,7 +10812,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/mail/static/src/discuss/core/public/welcome_page.xml:0
 msgid "What's your name?"
-msgstr ""
+msgstr "Hvad hedder du?"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_activity__user_tz

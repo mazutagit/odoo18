@@ -511,13 +511,21 @@ class Stream:
     @classmethod
     def from_binary_field(cls, record, field_name):
         """ Create a :class:`~Stream`: from a binary field. """
-        data_b64 = record[field_name]
-        try:
-            data = base64.b64decode(data_b64, validate=True) if data_b64 else b''
-        except ValueError as exc:
-            e = ("Expected base64 encoded content, but it looks like "
-                 f"{record._name}.{field_name} contains raw bytes.")
-            raise ValueError(e) from exc
+        data = record[field_name] or b''
+
+        # Image fields enforce base64 encoding. Binary fields don't
+        # enforce anything: raw bytes are fine, expected even.
+        # People nonetheless write base64 encoded bytes inside binary
+        # fields, and expect automatic decoding when read, crazy!
+        with contextlib.suppress(ValueError):
+            data = base64.b64decode(
+                # Some libs add linefeed every X (where X < 79) char in
+                # the base64, for email mime. validate=True would raise
+                # an error for those linefeeds so stip them.
+                data.replace(b'\r', b'').replace(b'\n', b''),
+                validate=True,
+            )
+
         return cls(
             type='data',
             data=data,
@@ -1299,6 +1307,7 @@ class HTTPRequest:
         httprequest.parameter_storage_class = werkzeug.datastructures.ImmutableMultiDict
         httprequest.max_content_length = DEFAULT_MAX_CONTENT_LENGTH
         httprequest.max_form_memory_size = 10 * 1024 * 1024  # 10 MB
+        self._session_id__ = httprequest.cookies.get('session_id')
 
         self.__wrapped = httprequest
         self.__environ = self.__wrapped.environ
@@ -1603,7 +1612,7 @@ class Request:
         self._post_init = None
 
     def _get_session_and_dbname(self):
-        sid = self.httprequest.cookies.get('session_id')
+        sid = self.httprequest._session_id__
         if not sid or not root.session_store.is_valid_key(sid):
             session = root.session_store.new()
         else:

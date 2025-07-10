@@ -208,19 +208,21 @@ def check_image():
     return {'major': version[0], 'minor': version[1]}
 
 
-def save_conf_server(url, token, db_uuid, enterprise_code):
+def save_conf_server(url, token, db_uuid, enterprise_code, db_name=None):
     """
     Save server configurations in odoo.conf
     :param url: The URL of the server
     :param token: The token to authenticate the server
     :param db_uuid: The database UUID
     :param enterprise_code: The enterprise code
+    :param db_name: The database name
     """
     update_conf({
         'remote_server': url,
         'token': token,
         'db_uuid': db_uuid,
         'enterprise_code': enterprise_code,
+        'db_name': db_name,
     })
 
 
@@ -266,13 +268,18 @@ def get_img_name():
     major, minor = get_version()[1:].split('.')
     return 'iotboxv%s_%s.zip' % (major, minor)
 
+
 def get_ip():
-    interfaces = netifaces.interfaces()
-    for interface in interfaces:
-        if netifaces.ifaddresses(interface).get(netifaces.AF_INET):
-            addr = netifaces.ifaddresses(interface).get(netifaces.AF_INET)[0]['addr']
-            if addr != '127.0.0.1':
-                return addr
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        s.connect(('8.8.8.8', 1))  # Google DNS
+        return s.getsockname()[0]
+    except OSError as e:
+        _logger.warning("Could not get local IP address: %s", e)
+        return None
+    finally:
+        s.close()
+
 
 def get_mac_address():
     interfaces = netifaces.interfaces()
@@ -611,6 +618,7 @@ def disconnect_from_server():
         'token': '',
         'db_uuid': '',
         'enterprise_code': '',
+        'db_name': '',
         'screen_orientation': '',
         'browser_url': '',
         'iot_handlers_etag': '',

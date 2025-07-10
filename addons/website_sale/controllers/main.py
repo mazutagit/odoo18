@@ -1431,7 +1431,7 @@ class WebsiteSale(payment_portal.PaymentPortal):
             name_change = (
                 'name' in address_values
                 and partner_sudo.name
-                and address_values['name'] != partner_sudo.name
+                and address_values['name'] != partner_sudo.name.strip()
             )
             email_change = (
                 'email' in address_values
@@ -1839,7 +1839,7 @@ class WebsiteSale(payment_portal.PaymentPortal):
             'shipping_info_required': order._has_deliverable_products(),
             # Todo: remove in master
             'delivery_amount': payment_utils.to_minor_currency_units(
-                order.order_line.filtered(lambda l: l.is_delivery).price_total, order.currency_id
+                order.amount_total - order._compute_amount_total_without_delivery(), order.currency_id
             ),
             'shipping_address_update_route': self._express_checkout_delivery_route,
         })
