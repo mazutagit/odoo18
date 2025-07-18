@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-19 20:36+0000\n"
+"POT-Creation-Date: 2025-07-11 18:38+0000\n"
 "PO-Revision-Date: 2024-09-25 09:42+0000\n"
 "Last-Translator: Raz Omer Hussein, 2025\n"
 "Language-Team: Kurdish (https://app.transifex.com/odoo/teams/41243/ku/)\n"
@@ -687,6 +687,11 @@ msgid "<strong>Customer Address</strong>"
 msgstr ""
 
 #. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.report_delivery_document
+msgid "<strong>Delivered</strong>"
+msgstr ""
+
+#. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.report_picking
 msgid "<strong>Delivery address</strong>"
 msgstr ""
@@ -723,6 +728,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:stock.report_delivery_document
 #: model_terms:ir.ui.view,arch_db:stock.report_picking
 msgid "<strong>Order</strong>"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.report_delivery_document
+msgid "<strong>Ordered</strong>"
 msgstr ""
 
 #. module: stock
@@ -1262,7 +1272,7 @@ msgstr "ژمارەی هاوپێچەکان"
 #: model:ir.ui.menu,name:stock.menu_attribute_action
 #: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
 msgid "Attributes"
-msgstr ""
+msgstr "سیفاتەکان"
 
 #. module: stock
 #: model:ir.model.fields.selection,name:stock.selection__res_company__annual_inventory_month__8
@@ -1523,7 +1533,7 @@ msgstr ""
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.stock_picking_calendar
 msgid "Calendar View"
-msgstr ""
+msgstr "بینینی ساڵنامە"
 
 #. module: stock
 #. odoo-python
@@ -1803,12 +1813,26 @@ msgstr ""
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid ""
+"Compute shipping costs and ship with DHL<br/>\n"
+"                                    <strong>(please go to Home&gt;Apps to install)</strong>"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
 msgid "Compute shipping costs and ship with Easypost"
 msgstr ""
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
 msgid "Compute shipping costs and ship with FedEx"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid ""
+"Compute shipping costs and ship with FedEx<br/>\n"
+"                                    <strong>(please go to Home&gt;Apps to install)</strong>"
 msgstr ""
 
 #. module: stock
@@ -1833,7 +1857,21 @@ msgstr ""
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid ""
+"Compute shipping costs and ship with UPS<br/>\n"
+"                                    <strong>(please go to Home&gt;Apps to install)</strong>"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
 msgid "Compute shipping costs and ship with USPS"
+msgstr ""
+
+#. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid ""
+"Compute shipping costs and ship with USPS<br/>\n"
+"                                    <strong>(please go to Home&gt;Apps to install)</strong>"
 msgstr ""
 
 #. module: stock
@@ -2340,6 +2378,11 @@ msgid "DEMO_UOM"
 msgstr ""
 
 #. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
+msgid "DHL Connector"
+msgstr ""
+
+#. module: stock
 #: model:ir.model.fields,field_description:stock.field_res_config_settings__module_delivery_dhl
 msgid "DHL Express Connector"
 msgstr ""
@@ -2503,7 +2546,7 @@ msgstr ""
 #: model:ir.model.fields,help:stock.field_stock_storage_category_capacity__product_uom_id
 #: model:ir.model.fields,help:stock.field_stock_warehouse_orderpoint__product_uom
 msgid "Default unit of measure used for all stock operations."
-msgstr ""
+msgstr "یەکەى پێوانەى پێشوەختە بەکاردێت بۆ هەموو کارەکانى پشکەکان."
 
 #. module: stock
 #: model:ir.model.fields.selection,name:stock.selection__stock_move__procure_method__make_to_stock
@@ -2992,6 +3035,7 @@ msgid "Do you confirm you want to scrap"
 msgstr ""
 
 #. module: stock
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
 #: model_terms:ir.ui.view,arch_db:stock.view_picking_type_form
 msgid "Documentation"
 msgstr ""
@@ -3211,6 +3255,7 @@ msgstr "شوبات"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_res_config_settings__module_delivery_fedex
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
 msgid "FedEx Connector"
 msgstr ""
 
@@ -3564,7 +3609,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:stock.view_putaway_search
 #: model_terms:ir.ui.view,arch_db:stock.warehouse_orderpoint_search
 msgid "Group By"
-msgstr ""
+msgstr "گروپ لەلایەن..."
 
 #. module: stock
 #: model_terms:ir.ui.view,arch_db:stock.quant_package_search_view
@@ -9617,11 +9662,13 @@ msgstr ""
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_res_config_settings__module_delivery_ups
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
 msgid "UPS Connector"
 msgstr ""
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_res_config_settings__module_delivery_usps
+#: model_terms:ir.ui.view,arch_db:stock.res_config_settings_view_form
 msgid "USPS Connector"
 msgstr ""
 
