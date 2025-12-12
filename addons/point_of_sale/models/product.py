@@ -9,7 +9,8 @@ from odoo.osv.expression import AND
 
 
 class ProductTemplate(models.Model):
-    _inherit = 'product.template'
+    _name = 'product.template'
+    _inherit = ['product.template', 'pos.load.mixin']
 
     available_in_pos = fields.Boolean(string='Available in POS', help='Check if you want this product to appear in the Point of Sale.', default=False)
     to_weight = fields.Boolean(string='To Weigh With Scale', help="Check if the product should be weighted using the hardware scale integration.")
@@ -56,6 +57,14 @@ class ProductTemplate(models.Model):
                 combo_name = self.env['product.combo.item'].sudo().search([('product_id', 'in', product.product_variant_ids.ids)], limit=1).combo_id.name
                 if combo_name:
                     raise UserError(_('You must first remove this product from the %s combo', combo_name))
+
+    @api.model
+    def _load_pos_data_fields(self, config_id):
+        return ['id']
+
+    @api.model
+    def _load_pos_data_domain(self, data):
+        return [('id', 'in', list({p['product_tmpl_id'] for p in data['product.product']['data']}))]
 
 
 class ProductProduct(models.Model):
@@ -260,7 +269,7 @@ class ProductAttribute(models.Model):
 
     @api.model
     def _load_pos_data_fields(self, config_id):
-        return ['name', 'display_type', 'template_value_ids', 'attribute_line_ids', 'create_variant']
+        return ['name', 'display_type', 'create_variant']
 
     @api.model
     def _load_pos_data_domain(self, data):
@@ -356,8 +365,13 @@ class Uom(models.Model):
         return ['id', 'name', 'category_id', 'factor_inv', 'factor', 'is_pos_groupable', 'uom_type', 'rounding']
 
     def _load_pos_data(self, data):
+        # Add custom fields for 'formula' taxes.
+        fields = set(self._load_pos_data_fields(data['pos.config']['data'][0]['id']))
+        taxes = self.env['account.tax'].search(self.env['account.tax']._load_pos_data_domain(data))
+        product_fields = taxes._eval_taxes_computation_prepare_product_uom_fields()
+        fields = list(fields.union(product_fields))
+
         domain = self._load_pos_data_domain(data)
-        fields = self._load_pos_data_fields(data['pos.config']['data'][0]['id'])
         return {
             'data': self.with_context({**self.env.context}).search_read(domain, fields, load=False),
             'fields': fields,

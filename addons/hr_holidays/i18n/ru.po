@@ -1,26 +1,31 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* hr_holidays
-# 
+# * hr_holidays
+#
 # Translators:
 # alenafairy, 2024
 # Ilya Rozhkov, 2024
-# Anastasiia Koroleva, 2025
 # Wil Odoo, 2025
-# 
+# Anastasiia Koroleva, 2025
+#
+# "Anastasiia Koroleva (koan)" <koan@odoo.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-11 18:38+0000\n"
-"PO-Revision-Date: 2024-09-25 09:41+0000\n"
-"Last-Translator: Wil Odoo, 2025\n"
-"Language-Team: Russian (https://app.transifex.com/odoo/teams/41243/ru/)\n"
+"POT-Creation-Date: 2025-11-14 18:37+0000\n"
+"PO-Revision-Date: 2025-10-20 06:22+0000\n"
+"Last-Translator: \"Anastasiia Koroleva (koan)\" <koan@odoo.com>\n"
+"Language-Team: Russian <https://translate.odoo.com/projects/odoo-18/"
+"hr_holidays/ru/>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #. module: hr_holidays
 #. odoo-python
@@ -175,11 +180,9 @@ msgstr "&lt;/th&gt;"
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.report_holidayssummary
 msgid ""
-"&lt;td class=\"text-center oe_leftfit oe_rightfit\" style=\"background-"
-"color:"
+"&lt;td class=\"text-center oe_leftfit oe_rightfit\" style=\"background-color:"
 msgstr ""
-"&lt;td class=\"text-center oe_leftfit oe_rightfit\" style=\"background-"
-"color:"
+"&lt;td class=\"text-center oe_leftfit oe_rightfit\" style=\"background-color:"
 
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.report_holidayssummary
@@ -254,19 +257,23 @@ msgstr "<i class=\"fa fa-times\"/> Отказаться"
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_allocation_generate_multi_wizard_view_form
 msgid ""
 "<span class=\"ml8\" invisible=\"request_unit == 'hour'\">Days</span>\n"
-"                            <span class=\"ml8\" invisible=\"request_unit != 'hour'\">Hours</span>"
+"                            <span class=\"ml8\" invisible=\"request_unit != "
+"'hour'\">Hours</span>"
 msgstr ""
 "<span class=\"ml8\" invisible=\"request_unit == 'hour'\">Дни</span>\n"
-"                            <span class=\"ml8\" invisible=\"request_unit != 'hour'\">Часы</span>"
+"                            <span class=\"ml8\" invisible=\"request_unit != "
+"'hour'\">Часы</span>"
 
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_allocation_view_form
 msgid ""
 "<span class=\"ml8\" invisible=\"type_request_unit == 'hour'\">Days</span>\n"
-"                                <span class=\"ml8\" invisible=\"type_request_unit != 'hour'\">Hours</span>"
+"                                <span class=\"ml8\" "
+"invisible=\"type_request_unit != 'hour'\">Hours</span>"
 msgstr ""
 "<span class=\"ml8\" invisible=\"type_request_unit == 'hour'\">Дни</span>\n"
-"                                <span class=\"ml8\" invisible=\"type_request_unit != 'hour'\">Часы</span>"
+"                                <span class=\"ml8\" "
+"invisible=\"type_request_unit != 'hour'\">Часы</span>"
 
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_employee_public_form_view_inherit
@@ -333,17 +340,19 @@ msgstr "<span class=\"text-muted\">от </span>"
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_view_form
 msgid ""
-"<span>The employee has a different timezone than yours! Here dates and times are displayed in the employee's timezone</span>\n"
+"<span>The employee has a different timezone than yours! Here dates and times "
+"are displayed in the employee's timezone</span>\n"
 "                    ("
 msgstr ""
-"<span>У сотрудника другой часовой пояс! Здесь дата и время отображаются в часовом поясе сотрудника</span>\n"
+"<span>У сотрудника другой часовой пояс! Здесь дата и время отображаются в "
+"часовом поясе сотрудника</span>\n"
 "                    ("
 
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_view_form
 msgid ""
-"<span>You can only take this time off in whole days, so if your schedule has"
-" half days, it won't be used efficiently.</span>"
+"<span>You can only take this time off in whole days, so if your schedule has "
+"half days, it won't be used efficiently.</span>"
 msgstr ""
 "<span>Взять отгул можно только за целые дни, поэтому, если в вашем "
 "расписании есть полдня, он не будет использован эффективно.</span>"
@@ -363,8 +372,7 @@ msgstr "Отмененный отпуск нельзя редактироват�
 #: model_terms:ir.actions.act_window,help:hr_holidays.hr_leave_action_action_approve_department
 #: model_terms:ir.actions.act_window,help:hr_holidays.hr_leave_action_holiday_allocation_id
 msgid ""
-"A great way to keep track on employee’s PTOs, sick days, and approval "
-"status."
+"A great way to keep track on employee’s PTOs, sick days, and approval status."
 msgstr ""
 "Отличный способ отслеживать количество отпускных дней сотрудников, "
 "больничных и статуса одобрения."
@@ -373,8 +381,8 @@ msgstr ""
 #: model_terms:ir.actions.act_window,help:hr_holidays.hr_leave_action_my
 #: model_terms:ir.actions.act_window,help:hr_holidays.hr_leave_action_new_request
 msgid ""
-"A great way to keep track on your time off requests, sick days, and approval"
-" status."
+"A great way to keep track on your time off requests, sick days, and approval "
+"status."
 msgstr ""
 "Отличный способ отслеживать запросы на отгулы, дни болезни и статус их "
 "утверждения."
@@ -546,7 +554,7 @@ msgstr "Активность"
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__activity_exception_decoration
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_allocation__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr "Оформление исключения активности"
+msgstr "Оформление задачи-исключения"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__activity_state
@@ -722,8 +730,8 @@ msgid ""
 "Allocation must be confirmed \"To Approve\" or validated once \"Second "
 "Approval\" in order to approve it."
 msgstr ""
-"Распределение должно быть сначала подтверждено как «К согласованию», а затем"
-" утверждено при необходимости второго согласования."
+"Распределение должно быть сначала подтверждено как «К согласованию», а затем "
+"утверждено при необходимости второго согласования."
 
 #. module: hr_holidays
 #. odoo-python
@@ -749,7 +757,8 @@ msgstr ""
 #. module: hr_holidays
 #. odoo-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
-msgid "Allocation state must be \"Refused\" in order to be reset to \"To Approve\"."
+msgid ""
+"Allocation state must be \"Refused\" in order to be reset to \"To Approve\"."
 msgstr ""
 "Чтобы вернуть распределение на стадию «К согласованию», оно должно быть в "
 "статусе «Отклонено»."
@@ -807,8 +816,7 @@ msgstr "Сумма"
 #. odoo-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid "An employee already booked time off which overlaps with this period:%s"
-msgstr ""
-"Сотрудник уже забронировал отгул, который совпадает с этим периодом:%s"
+msgstr "Сотрудник уже забронировал отгул, который совпадает с этим периодом:%s"
 
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.report_holidayssummary
@@ -962,10 +970,12 @@ msgstr "Август"
 #. odoo-python
 #: code:addons/hr_holidays/wizard/hr_leave_generate_multi_wizard.py:0
 msgid ""
-"Automatic time off spliting during batch generation is not managed for ovelapping time off declared in hours. Conflicting time off:\n"
+"Automatic time off spliting during batch generation is not managed for "
+"ovelapping time off declared in hours. Conflicting time off:\n"
 "%s"
 msgstr ""
-"Автоматическое разделение отпуска при пакетном создании не поддерживается для перекрывающихся отпусков, оформленных в часах. Конфликт возник с:\n"
+"Автоматическое разделение отпуска при пакетном создании не поддерживается "
+"для перекрывающихся отпусков, оформленных в часах. Конфликт возник с:\n"
 "%s"
 
 #. module: hr_holidays
@@ -1326,8 +1336,8 @@ msgid ""
 "Count of time off requests for this time off type (approved or waiting for "
 "approbation) with a start date in the current year."
 msgstr ""
-"Количество заявок на отпуск по данному типу отпуска (в статусе «Согласовано»"
-" или «Ожидает согласования»), с датой начала в текущем году."
+"Количество заявок на отпуск по данному типу отпуска (в статусе «Согласовано» "
+"или «Ожидает согласования»), с датой начала в текущем году."
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_type__country_id
@@ -1372,7 +1382,7 @@ msgstr "Создать запрос на распределение отсуст
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_mandatory_day__create_uid
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_type__create_uid
 msgid "Created by"
-msgstr "Создано"
+msgstr "Создано:"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_holidays_cancel_leave__create_date
@@ -1386,7 +1396,7 @@ msgstr "Создано"
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_mandatory_day__create_date
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_type__create_date
 msgid "Created on"
-msgstr "Создано"
+msgstr "Дата создания:"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_employee__current_leave_state
@@ -1738,7 +1748,8 @@ msgid ""
 "\n"
 "        Not Allowed: User cannot request an allocation."
 msgstr ""
-"Разрешены запросы на дополнительные дни: Пользователь может запросить выделение для себя.\n"
+"Разрешены запросы на дополнительные дни: Пользователь может запросить "
+"выделение для себя.\n"
 "\n"
 "        Не разрешено: Пользователь не может запросить выделение."
 
@@ -1823,8 +1834,8 @@ msgstr "Шрифт, отличный значок, например. к.-а.-з�
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave_allocation__number_of_hours_display
 msgid ""
 "For an Accrual Allocation, this field contains the theorical amount of time "
-"given to the employee, due to a previous start date, on the first run of the"
-" plan. This can be manually edited."
+"given to the employee, due to a previous start date, on the first run of the "
+"plan. This can be manually edited."
 msgstr ""
 "Для распределения по начислениям это поле содержит теоретическое количество "
 "времени, предоставленного сотруднику из-за более ранней даты начала. "
@@ -2023,7 +2034,7 @@ msgstr "Иконка"
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave__activity_exception_icon
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave_allocation__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr "Значок, обозначающий исключение Дела."
+msgstr "Иконка, указывающая на задачу-исключение."
 
 #. module: hr_holidays
 #. odoo-javascript
@@ -2054,8 +2065,8 @@ msgid ""
 "If checked, the accrual period will be calculated according to the work "
 "days, not calendar days."
 msgstr ""
-"Если флажок установлен, период начисления будет рассчитываться по рабочим, а"
-" не календарным дням."
+"Если флажок установлен, период начисления будет рассчитываться по рабочим, а "
+"не календарным дням."
 
 #. module: hr_holidays
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave_type__allows_negative
@@ -2327,8 +2338,7 @@ msgstr "Максимально допустимый перерасход"
 #. module: hr_holidays
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave_type__virtual_remaining_leaves
 msgid ""
-"Maximum Time Off Allowed - Time Off Already Taken - Time Off Waiting "
-"Approval"
+"Maximum Time Off Allowed - Time Off Already Taken - Time Off Waiting Approval"
 msgstr ""
 "Максимальный разрешенный отпуск - Отпуск уже взято - Отпуск ожидание "
 "одобрения"
@@ -2514,11 +2524,11 @@ msgstr "Запрос на новое распределение"
 #. odoo-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid ""
-"New Allocation Request created by %(user)s: %(count)s Days of "
-"%(allocation_type)s"
+"New Allocation Request created by %(user)s: %(count)s Days of %"
+"(allocation_type)s"
 msgstr ""
-"Новый запрос на выделение средств, созданный %(user)s: %(count)s Дни из "
-"%(allocation_type)s"
+"Новый запрос на выделение средств, созданный %(user)s: %(count)s Дни из %"
+"(allocation_type)s"
 
 #. module: hr_holidays
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_accrual_plan_view_form
@@ -2604,8 +2614,8 @@ msgid ""
 "Non-visible allocations can still be selected when taking a leave, but will "
 "simply not be displayed on the leave dashboard."
 msgstr ""
-"Невидимые распределения можно использовать при оформлении отпуска, но они не"
-" будут отображаться на дашборде отпусков."
+"Невидимые распределения можно использовать при оформлении отпуска, но они не "
+"будут отображаться на дашборде отпусков."
 
 #. module: hr_holidays
 #. odoo-javascript
@@ -2742,8 +2752,8 @@ msgstr "Только"
 #. odoo-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid ""
-"Only %s's Time Off Approver, a time off Officer/Responsible or Administrator"
-" can approve or refuse allocation requests."
+"Only %s's Time Off Approver, a time off Officer/Responsible or Administrator "
+"can approve or refuse allocation requests."
 msgstr ""
 "Только согласующее лицо для сотрудника %s, администратор или сотрудник, "
 "ответственный за отпуска, может согласовать или отклонить запрос на "
@@ -2770,10 +2780,8 @@ msgstr "Только менеджер по отгулам может сбрас�
 #. module: hr_holidays
 #. odoo-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
-msgid ""
-"Only a Time Off Officer or Manager can approve/refuse its own requests."
-msgstr ""
-"Только сотрудник или менеджер может утверждать/отклонять свои запросы."
+msgid "Only a Time Off Officer or Manager can approve/refuse its own requests."
+msgstr "Только сотрудник или менеджер может утверждать/отклонять свои запросы."
 
 #. module: hr_holidays
 #. odoo-python
@@ -3167,14 +3175,19 @@ msgstr "Выбор Типа Отпуска"
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave_type__allocation_validation_type
 msgid ""
 "Select the level of approval needed in case of request by employee\n"
-"            #     - No validation needed: The employee's request is automatically approved.\n"
-"            #     - Approved by Time Off Officer: The employee's request need to be manually approved\n"
+"            #     - No validation needed: The employee's request is "
+"automatically approved.\n"
+"            #     - Approved by Time Off Officer: The employee's request "
+"need to be manually approved\n"
 "            #       by the Time Off Officer, Employee's Approver or both."
 msgstr ""
 "Выберите уровень согласования, необходимый при подаче заявки сотрудником\n"
-"            #     - Без утверждения: заявка сотрудника согласовывается автоматически.\n"
-"            #     - Согласование сотрудником, ответственным за отпуска: заявка сотрудника должна быть согласована вручную\n"
-"            #       ответственным за отпуска сотрудником, назначенным для сотрудника согласующим лицом или обоими."
+"            #     - Без утверждения: заявка сотрудника согласовывается "
+"автоматически.\n"
+"            #     - Согласование сотрудником, ответственным за отпуска: "
+"заявка сотрудника должна быть согласована вручную\n"
+"            #       ответственным за отпуска сотрудником, назначенным для "
+"сотрудника согласующим лицом или обоими."
 
 #. module: hr_holidays
 #. odoo-javascript
@@ -3190,10 +3203,13 @@ msgstr "Выберите запрос, который вы только что �
 #: model:ir.model.fields,help:hr_holidays.field_res_users__leave_manager_id
 msgid ""
 "Select the user responsible for approving \"Time Off\" of this employee.\n"
-"If empty, the approval is done by an Administrator or Approver (determined in settings/users)."
+"If empty, the approval is done by an Administrator or Approver (determined "
+"in settings/users)."
 msgstr ""
-"Выберите пользователя, ответственного за согласование отпусков данного сотрудника.\n"
-"Если поле пустое, согласовывать отпуска будет администратор или назначенный согласующий (см. Настройки > Пользователи)."
+"Выберите пользователя, ответственного за согласование отпусков данного "
+"сотрудника.\n"
+"Если поле пустое, согласовывать отпуска будет администратор или назначенный "
+"согласующий (см. Настройки > Пользователи)."
 
 #. module: hr_holidays
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave_accrual_level__second_month__sep
@@ -3217,8 +3233,8 @@ msgstr ""
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave_accrual_level__postpone_max_days
 msgid "Set a maximum of accruals an allocation keeps at the end of the year."
 msgstr ""
-"Установите максимальный размер начислений, которые распределение сохраняет в"
-" конце года."
+"Установите максимальный размер начислений, которые распределение сохраняет в "
+"конце года."
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave_type__show_on_dashboard
@@ -3268,26 +3284,36 @@ msgstr ""
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave_accrual_plan__time_off_type_id
 msgid ""
 "Specify if this accrual plan can only be used with this Time Off Type.\n"
-"                Leave empty if this accrual plan can be used with any Time Off Type."
+"                Leave empty if this accrual plan can be used with any Time "
+"Off Type."
 msgstr ""
-"Укажите, применяется ли данный план начислений только для этого типа отпуска.\n"
-"                Оставьте поле пустым, если план может использоваться с любым типом отпуска."
+"Укажите, применяется ли данный план начислений только для этого типа "
+"отпуска.\n"
+"                Оставьте поле пустым, если план может использоваться с любым "
+"типом отпуска."
 
 #. module: hr_holidays
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave_accrual_plan__transition_mode
 msgid ""
-"Specify what occurs if a level transition takes place in the middle of a pay period.\n"
+"Specify what occurs if a level transition takes place in the middle of a pay "
+"period.\n"
 "\n"
-"                'Immediately' will switch the employee to the new accrual level on the exact date during the ongoing pay period.\n"
+"                'Immediately' will switch the employee to the new accrual "
+"level on the exact date during the ongoing pay period.\n"
 "\n"
-"                'After this accrual's period' will keep the employee on the same accrual level until the ongoing pay period is complete.\n"
-"                After it is complete, the new level will take effect when the next pay period begins."
+"                'After this accrual's period' will keep the employee on the "
+"same accrual level until the ongoing pay period is complete.\n"
+"                After it is complete, the new level will take effect when "
+"the next pay period begins."
 msgstr ""
-"Укажите, как будет происходить переход между уровнями начисления в середине расчетного периода:\n"
+"Укажите, как будет происходить переход между уровнями начисления в середине "
+"расчетного периода:\n"
 "\n"
-"                «Немедленно»: переход к новому уровню произойдет с указанной даты в текущем периоде.\n"
+"                «Немедленно»: переход к новому уровню произойдет с указанной "
+"даты в текущем периоде.\n"
 "\n"
-"                «После текущего периода»: сохранит за сотрудником прежний уровень начисления до завершения текущего периода.\n"
+"                «После текущего периода»: сохранит за сотрудником прежний "
+"уровень начисления до завершения текущего периода.\n"
 "                Переход произойдет с началом следующего периода."
 
 #. module: hr_holidays
@@ -3411,8 +3437,7 @@ msgstr ""
 #. module: hr_holidays
 #. odoo-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
-msgid ""
-"The Start Date of the Validity Period must be anterior to the End Date."
+msgid "The Start Date of the Validity Period must be anterior to the End Date."
 msgstr "Дата начала периода действия должна быть раньше даты окончания."
 
 #. module: hr_holidays
@@ -3423,8 +3448,7 @@ msgid ""
 "is used."
 msgstr ""
 "Расчет начинается по истечении определенного периода с даты начала "
-"распределения. Укажите количество дней, месяцев или лет до начала "
-"начислений."
+"распределения. Укажите количество дней, месяцев или лет до начала начислений."
 
 #. module: hr_holidays
 #. odoo-python
@@ -3484,7 +3508,8 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/hr_holidays/static/src/dashboard/time_off_card.xml:0
 msgid ""
-"The leaves planned in the future are exceeding the maximum value of the allocation.\n"
+"The leaves planned in the future are exceeding the maximum value of the "
+"allocation.\n"
 "                It will not be possible to take all of them."
 msgstr ""
 "Запланированные отпуска превышают допустимый остаток распределений.\n"
@@ -3519,8 +3544,7 @@ msgstr ""
 
 #. module: hr_holidays
 #: model:ir.model.constraint,message:hr_holidays.constraint_hr_leave_date_check3
-msgid ""
-"The request start date must be before or equal to the request end date."
+msgid "The request start date must be before or equal to the request end date."
 msgstr ""
 "Дата начала запроса должна быть раньше или равна дате окончания запроса."
 
@@ -3602,14 +3626,13 @@ msgid ""
 "to the days allocated to the employee. If you need to change the "
 "configuration of the allocation, delete and create a new one."
 msgstr ""
-"Это распределение уже было выполнено. Внесенные изменения не повлияют на уже"
-" выделенные сотруднику дни. Чтобы внести изменения, удалите запись и "
-"создайте новое распределение."
+"Это распределение уже было выполнено. Внесенные изменения не повлияют на уже "
+"выделенные сотруднику дни. Чтобы внести изменения, удалите запись и создайте "
+"новое распределение."
 
 #. module: hr_holidays
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave__first_approver_id
-msgid ""
-"This area is automatically filled by the user who validate the time off"
+msgid "This area is automatically filled by the user who validate the time off"
 msgstr ""
 "Эта область автоматически заполняется пользователем, который проверяет "
 "соответствие времени отпуска"
@@ -3617,8 +3640,8 @@ msgstr ""
 #. module: hr_holidays
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave__second_approver_id
 msgid ""
-"This area is automatically filled by the user who validate the time off with"
-" second level (If time off type need second validation)"
+"This area is automatically filled by the user who validate the time off with "
+"second level (If time off type need second validation)"
 msgstr ""
 "Это поле заполняется автоматически пользователем, который выполнил "
 "согласование второго уровня (если по типу отпуска требуется двойное "
@@ -3768,11 +3791,15 @@ msgstr "Отпуска Подтип Уведомлений"
 #: model_terms:ir.actions.act_window,help:hr_holidays.hr_leave_allocation_action_approve_department
 #: model_terms:ir.actions.act_window,help:hr_holidays.hr_leave_allocation_action_my
 msgid ""
-"Time Off Officers allocate time off days to employees (e.g. paid time off).<br>\n"
-"                Employees request allocations to Time Off Officers (e.g. recuperation days)."
+"Time Off Officers allocate time off days to employees (e.g. paid time off)."
+"<br>\n"
+"                Employees request allocations to Time Off Officers (e.g. "
+"recuperation days)."
 msgstr ""
-"Ответственные за отпуска лица начисляют сотрудникам дни отпуска (например, оплачиваемый отпуск).<br>\n"
-"Сотрудники могут создавать запросы на распределение и отправлять их ответственным за отпуска (например, дни для реабилитации)."
+"Ответственные за отпуска лица начисляют сотрудникам дни отпуска (например, "
+"оплачиваемый отпуск).<br>\n"
+"Сотрудники могут создавать запросы на распределение и отправлять их "
+"ответственным за отпуска (например, дни для реабилитации)."
 
 #. module: hr_holidays
 #. odoo-javascript
@@ -4018,11 +4045,11 @@ msgstr "Общее количество распределенных дней."
 #: model:ir.model.fields,help:hr_holidays.field_hr_employee_public__remaining_leaves
 msgid ""
 "Total number of paid time off allocated to this employee, change this value "
-"to create allocation/time off request. Total based on all the time off types"
-" without overriding limit."
+"to create allocation/time off request. Total based on all the time off types "
+"without overriding limit."
 msgstr ""
-"Общее количество оплачиваемых дней отпуска, начисленных сотруднику. Измените"
-" значение для создания запроса на распределение или заявки на отпуск. Общее "
+"Общее количество оплачиваемых дней отпуска, начисленных сотруднику. Измените "
+"значение для создания запроса на распределение или заявки на отпуск. Общее "
 "количество рассчитывается по всем типам отпусков без превышения лимита."
 
 #. module: hr_holidays
@@ -4036,8 +4063,8 @@ msgid ""
 "Try to add some records, or make sure that there is no active filter in the "
 "search bar."
 msgstr ""
-"Попробуйте добавить несколько записей или убедитесь, что в строке поиска нет"
-" активного фильтра."
+"Попробуйте добавить несколько записей или убедитесь, что в строке поиска нет "
+"активного фильтра."
 
 #. module: hr_holidays
 #: model:ir.model.fields.selection,name:hr_holidays.selection__hr_leave_accrual_level__week_day__tue
@@ -4078,7 +4105,7 @@ msgstr "Тип Запрос Единица измерения"
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave__activity_exception_decoration
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave_allocation__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr "Тип Дела для исключения в записи."
+msgstr "Тип задачи-исключения в записи."
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_leave__tz
@@ -4330,11 +4357,13 @@ msgstr "Да"
 msgid ""
 "Yes: Time off requests need to have a valid allocation.\n"
 "\n"
-"              No Limit: Time Off requests can be taken without any prior allocation."
+"              No Limit: Time Off requests can be taken without any prior "
+"allocation."
 msgstr ""
 "Да: Заявки на отгулы должны иметь действительное распределение.\n"
 "\n"
-"              Без ограничений: заявки на отгулы можно принимать без предварительного распределения."
+"              Без ограничений: заявки на отгулы можно принимать без "
+"предварительного распределения."
 
 #. module: hr_holidays
 #. odoo-python
@@ -4345,8 +4374,7 @@ msgstr "Вы не можете подать заявку на отпуск в «
 #. module: hr_holidays
 #: model:ir.model.fields,help:hr_holidays.field_hr_leave_accrual_level__accrual_validity_count
 msgid ""
-"You can define a period of time where the days carried over will be "
-"available"
+"You can define a period of time where the days carried over will be available"
 msgstr ""
 "Можно задать период, в течение которого перенесенные дни будут доступны"
 
@@ -4395,8 +4423,8 @@ msgstr "Нельзя удалить заявку на отгул, которая
 #. odoo-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
-"You cannot first approve a time off for %s, because you are not his time off"
-" manager"
+"You cannot first approve a time off for %s, because you are not his time off "
+"manager"
 msgstr ""
 "Вы не можете сначала утвердить отгул для %s, потому что вы не являетесь его "
 "менеджером по отгулам"
@@ -4404,11 +4432,10 @@ msgstr ""
 #. module: hr_holidays
 #. odoo-python
 #: code:addons/hr_holidays/models/hr_leave_accrual_plan_level.py:0
-msgid ""
-"You cannot have a cap on accrued time without setting a maximum amount."
+msgid "You cannot have a cap on accrued time without setting a maximum amount."
 msgstr ""
-"Нельзя установить ограничение на начисляемое время без задания максимального"
-" значения."
+"Нельзя установить ограничение на начисляемое время без задания максимального "
+"значения."
 
 #. module: hr_holidays
 #: model:ir.model.constraint,message:hr_holidays.constraint_hr_leave_accrual_level_valid_yearly_cap_value
@@ -4436,22 +4463,21 @@ msgstr ""
 #. odoo-python
 #: code:addons/hr_holidays/models/hr_leave_allocation.py:0
 msgid ""
-"You cannot reduce the duration below the duration of leaves already taken by"
-" the employee."
+"You cannot reduce the duration below the duration of leaves already taken by "
+"the employee."
 msgstr ""
 "Нельзя уменьшить продолжительность ниже уже использованных сотрудником дней "
 "отпуска."
 
 #. module: hr_holidays
 #. odoo-python
-#: code:addons/hr_holidays/models/hr_leave_allocation.py:0
+#: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
-"You cannot refuse this allocation request since the employee has already "
-"taken leaves for it. Please refuse or delete those leaves first."
+"You do not have any allocation for this time off type.\n"
+"Please request an allocation before submitting your time off request."
 msgstr ""
-"Вы не можете отклонить этот запрос на распределение, поскольку сотрудник уже"
-" брал для него отпуск. Пожалуйста, сначала откажитесь или удалите эти "
-"отпуска."
+"У вас нет распределения для этого типа отпуска.\n"
+"Пожалуйста, запросите распределение перед отправкой вашей заявки на отпуск."
 
 #. module: hr_holidays
 #. odoo-python
@@ -4504,8 +4530,7 @@ msgstr "Для уровней плана начисления необходим
 #. odoo-python
 #: code:addons/hr_holidays/models/hr_leave.py:0
 msgid ""
-"You must have manager rights to modify/validate a time off that already "
-"begun"
+"You must have manager rights to modify/validate a time off that already begun"
 msgstr ""
 "Вы должны иметь права менеджера изменять/проверять отпуск, который уже "
 "начался"
@@ -4516,11 +4541,13 @@ msgstr ""
 msgid ""
 "You've already booked time off which overlaps with this period:\n"
 "%s\n"
-"Attempting to double-book your time off won't magically make your vacation 2x better!\n"
+"Attempting to double-book your time off won't magically make your vacation "
+"2x better!\n"
 msgstr ""
 "Вы уже запланировали отпуск, который совпадает с этим периодом:\n"
 "%s\n"
-"Попытка забронировать один и тот же отпуск дважды не сделает отпуск в два раза приятнее!\n"
+"Попытка забронировать один и тот же отпуск дважды не сделает отпуск в два "
+"раза приятнее!\n"
 
 #. module: hr_holidays
 #. odoo-python
@@ -4778,3 +4805,11 @@ msgstr "подтвердить"
 #: model_terms:ir.ui.view,arch_db:hr_holidays.hr_leave_view_kanban
 msgid "validated"
 msgstr "проверено"
+
+#~ msgid ""
+#~ "You cannot refuse this allocation request since the employee has already "
+#~ "taken leaves for it. Please refuse or delete those leaves first."
+#~ msgstr ""
+#~ "Вы не можете отклонить этот запрос на распределение, поскольку сотрудник "
+#~ "уже брал для него отпуск. Пожалуйста, сначала откажитесь или удалите эти "
+#~ "отпуска."

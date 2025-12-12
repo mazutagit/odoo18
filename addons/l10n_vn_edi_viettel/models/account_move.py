@@ -252,8 +252,6 @@ class AccountMove(models.Model):
                 'supplierTaxCode': self.company_id.vat,
                 'templateCode': self.l10n_vn_edi_invoice_symbol.invoice_template_id.name,
                 'invoiceNo': self.l10n_vn_edi_invoice_number,
-                'strIssueDate': self._l10n_vn_edi_format_date(self.l10n_vn_edi_issue_date),
-                'transactionUuid': self.l10n_vn_edi_invoice_transaction_id,
                 'fileType': file_format,
             },
             cookies={'access_token': access_token},
@@ -628,8 +626,7 @@ class AccountMove(models.Model):
             'buyerAddressLine': self.partner_id.street,
             'buyerPhoneNumber': commercial_partner_phone or '',
             'buyerEmail': self.commercial_partner_id.email or '',
-            'buyerDistrictName': self.partner_id.state_id.name,
-            'buyerCityName': self.partner_id.city,
+            'buyerCityName': self.partner_id.city or self.partner_id.state_id.name,
             'buyerCountryCode': self.partner_id.country_id.code,
             'buyerNotGetInvoice': 0,  # Set to 1 to no send the invoice to the buyer.
         }

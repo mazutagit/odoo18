@@ -106,13 +106,21 @@ class PeppolRegistration(models.TransientModel):
                 and not wizard.company_id._check_peppol_endpoint_number(warning=True)
             ):
                 peppol_warnings['company_peppol_endpoint_warning'] = {
+                    'level': 'warning',
                     'message': _("The endpoint number might not be correct. "
                                 "Please check if you entered the right identification number."),
                 }
-            if not wizard.smp_registration:
+            if wizard.peppol_endpoint and not wizard.smp_registration:
                 peppol_warnings['company_on_another_smp'] = {
+                    'level': 'info',
                     'message': _("Your company is already registered on another Access Point for receiving invoices."
                                  "We will register you as a sender only.")
+                }
+            if wizard.peppol_eas == '9925':
+                peppol_warnings['be_9925_warning'] = {
+                    'level': 'warning',
+                    'message': _("You are about to register with your VAT number. Make sure you register with your "
+                                "Company Registry (BCE/KBO) first to be compliant with the new regulation."),
                 }
             wizard.peppol_warnings = peppol_warnings or False
 
@@ -136,12 +144,8 @@ class PeppolRegistration(models.TransientModel):
 
     @api.depends('edi_user_id')
     def _compute_edi_mode(self):
-        edi_mode = self.env['ir.config_parameter'].sudo().get_param('account_peppol.edi.mode')
         for wizard in self:
-            if wizard.edi_user_id:
-                wizard.edi_mode = wizard.edi_user_id.edi_mode
-            else:
-                wizard.edi_mode = edi_mode or 'prod'
+            wizard.edi_mode = wizard.company_id._get_peppol_edi_mode()
 
     def _inverse_edi_mode(self):
         for wizard in self:

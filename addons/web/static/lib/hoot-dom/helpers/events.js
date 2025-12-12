@@ -1,6 +1,6 @@
 /** @odoo-module */
 
-import { getColorHex, getTag, isFirefox, isIterable } from "../hoot_dom_utils";
+import { getColorHex, getTag, isFirefox, isInstanceOf, isIterable } from "../hoot_dom_utils";
 import {
     getActiveElement,
     getDocument,
@@ -231,10 +231,11 @@ function constrainScrollY(target, y) {
  * @param {DataTransferOptions} options
  */
 function createDataTransfer(options) {
-    const dataTransfer =
-        options?.dataTransfer instanceof DataTransfer ? options.dataTransfer : new DataTransfer();
+    const dataTransfer = isInstanceOf(options?.dataTransfer, DataTransfer)
+        ? options.dataTransfer
+        : new DataTransfer();
     for (const file of options?.files || []) {
-        if (!(file instanceof File)) {
+        if (!isInstanceOf(file, File)) {
             throw new TypeError(`'DataTransfer.files' list only accepts 'File' objects`);
         }
         dataTransfer.items.add(file);
@@ -566,18 +567,22 @@ function getFirstCommonParent(a, b) {
 }
 
 /**
+ * Returns the interactive pointer target from a given element, unless the element
+ * is falsy, or the 'interactive' option is set to `false`.
+ *
+ * If an 'originalTarget' is given, the helper will deliberately throw an error if
+ * no interactive elements are found.
+ *
  * @param {HTMLElement} element
- * @param {Target} originalTarget
  * @param {QueryOptions} options
+ * @param {AsyncTarget} [originalTarget]
  */
-function getPointerTarget(element, originalTarget, options) {
-    if (options?.interactive === false) {
-        // Explicit 'interactive: false' option
-        // -> element can be a non-interactive element
+function getPointerTarget(element, options, originalTarget) {
+    if (!element || options?.interactive === false) {
         return element;
     }
     const interactiveElement = getInteractiveNode(element);
-    if (!interactiveElement) {
+    if (!interactiveElement && originalTarget) {
         queryAny(originalTarget, { ...options, interactive: true }); // Will throw if no elements are found
     }
     return interactiveElement;
@@ -661,7 +666,7 @@ function getStringSelection(target) {
 
 /**
  * @param {Node} node
- * @param  {...string} tagNames
+ * @param {...string} tagNames
  */
 function hasTagName(node, ...tagNames) {
     return tagNames.includes(getTag(node));
@@ -788,8 +793,9 @@ function registerButton(eventInit, toggle) {
  * @param {Event} ev
  */
 function registerFileInput({ target }) {
-    if (getTag(target) === "input" && target.type === "file") {
-        runTime.fileInput = target;
+    const actualTarget = target.shadowRoot ? target.shadowRoot.activeElement : target;
+    if (getTag(actualTarget) === "input" && actualTarget.type === "file") {
+        runTime.fileInput = actualTarget;
     } else {
         runTime.fileInput = null;
     }
@@ -887,12 +893,13 @@ function removeChangeTargetListeners() {
 
 /**
  * @param {HTMLElement | null} target
+ * @param {QueryOptions} [options]
  */
-function setPointerDownTarget(target) {
+function setPointerDownTarget(target, options) {
     if (runTime.pointerDownTarget) {
         runTime.previousPointerDownTarget = runTime.pointerDownTarget;
     }
-    runTime.pointerDownTarget = target;
+    runTime.pointerDownTarget = getPointerTarget(target, options);
     runTime.canStartDrag = false;
 }
 
@@ -1165,7 +1172,8 @@ async function _fill(target, value, options) {
 
     if (getTag(target) === "input") {
         switch (target.type) {
-            case "color": {
+            case "color":
+            case "time": {
                 target.value = String(value);
                 await _dispatch(target, "input");
                 await _dispatch(target, "change");
@@ -1227,7 +1235,7 @@ async function _fill(target, value, options) {
  * @param {{ implicit?: boolean, originalTarget: AsyncTarget }} hoverOptions
  */
 async function _hover(target, options, hoverOptions) {
-    const pointerTarget = target && getPointerTarget(target, hoverOptions.originalTarget, options);
+    const pointerTarget = getPointerTarget(target, options, hoverOptions.originalTarget);
     const position = target && getPosition(target, options);
 
     const previousPT = runTime.pointerTarget;
@@ -1629,7 +1637,7 @@ async function _keyUp(target, eventInit) {
  * @param {DragOptions} [options]
  */
 async function _pointerDown(options) {
-    setPointerDownTarget(runTime.pointerTarget);
+    setPointerDownTarget(runTime.pointerTarget, options);
 
     if (options?.dataTransfer || options?.files || options?.items) {
         runTime.dataTransfer = createDataTransfer(options);
@@ -1689,6 +1697,7 @@ async function _pointerUp(options) {
     const target = runTime.pointerTarget;
     const isLongTap = globalThis.Date.now() - runTime.touchStartTimeOffset > LONG_TAP_DELAY;
     const pointerDownTarget = runTime.pointerDownTarget;
+    const pointerUpTarget = getPointerTarget(target, options);
     const eventInit = {
         ...runTime.position,
         ...currentEventInit.pointerup,
@@ -1708,10 +1717,10 @@ async function _pointerUp(options) {
              * - On: pointer up after a prevented 'dragover' or 'dragenter'
              * - Do: triggers a 'drop' event on the target
              */
-            await _dispatch(target, "drop", eventInitWithDT);
+            await _dispatch(pointerUpTarget, "drop", eventInitWithDT);
         }
 
-        await _dispatch(target, "dragend", eventInitWithDT);
+        await _dispatch(pointerUpTarget, "dragend", eventInitWithDT);
         return;
     }
 
@@ -1719,8 +1728,8 @@ async function _pointerUp(options) {
         ...eventInit,
         detail: runTime.clickCount + 1,
     };
-    await dispatchPointerEvent(target, "pointerup", eventInit, {
-        mouse: !target.disabled && ["mouseup", mouseEventInit],
+    await dispatchPointerEvent(pointerUpTarget, "pointerup", eventInit, {
+        mouse: !pointerUpTarget.disabled && ["mouseup", mouseEventInit],
         touch: ["touchend"],
     });
 
@@ -1736,9 +1745,9 @@ async function _pointerUp(options) {
 
     let clickTarget;
     if (hasTouch()) {
-        clickTarget = pointerDownTarget === target && target;
+        clickTarget = pointerDownTarget === pointerUpTarget && pointerUpTarget;
     } else {
-        clickTarget = getFirstCommonParent(target, pointerDownTarget);
+        clickTarget = getFirstCommonParent(pointerUpTarget, pointerDownTarget);
     }
     if (clickTarget) {
         await triggerClick(clickTarget, mouseEventInit);
@@ -1750,7 +1759,7 @@ async function _pointerUp(options) {
         }
     }
 
-    setPointerDownTarget(null);
+    setPointerDownTarget(null, options);
     if (runTime.pointerDownTimeout) {
         globalThis.clearTimeout(runTime.pointerDownTimeout);
     }
@@ -2739,8 +2748,8 @@ export async function scroll(target, position, options) {
 }
 
 /**
- * Performs a selection event sequence current **active element**. This helper is
- * intended for `<select>` elements only.
+ * Performs a selection event sequence on the current **active element**. This helper
+ * is intended for `<select>` elements only.
  *
  * The event sequence is as follows:
  *  - `change`
@@ -2895,7 +2904,7 @@ export async function uncheck(target, options) {
 }
 
 /**
- * Triggers a "beforeunload" event the current **window**.
+ * Triggers a "beforeunload" event on the current **window**.
  *
  * @param {EventOptions} [options]
  * @returns {Promise<EventList>}

@@ -1,27 +1,31 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* project
-# 
+# * project
+#
 # Translators:
 # Grega Vavtar <grega@hbs.si>, 2024
 # JernejEditor, 2024
 # Wil Odoo, 2024
 # Jan Zorko, 2025
 # Aleš Pipan, 2025
-# 
+# Jan Zorko <jan.zorko@implex.si>, 2025.
+# Žiga Trček <ziga.trcek@implex.si>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-27 18:38+0000\n"
-"PO-Revision-Date: 2024-09-25 09:41+0000\n"
-"Last-Translator: Aleš Pipan, 2025\n"
-"Language-Team: Slovenian (https://app.transifex.com/odoo/teams/41243/sl/)\n"
+"PO-Revision-Date: 2025-11-25 18:32+0000\n"
+"Last-Translator: Žiga Trček <ziga.trcek@implex.si>\n"
+"Language-Team: Slovenian <https://translate.odoo.com/projects/odoo-18/"
+"project/sl/>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sl\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #. module: project
 #. odoo-python
@@ -114,6 +118,8 @@ msgid ""
 "#{record.milestone_count_reached.value} Milestones reached out of "
 "#{record.milestone_count.value}"
 msgstr ""
+"Doseženih #{record.milestone_count_reached.value} od "
+"#{record.milestone_count.value} mejnikov"
 
 #. module: project
 #: model_terms:ir.ui.view,arch_db:project.portal_tasks_list
@@ -160,7 +166,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/project/models/project_project.py:0
 msgid "%(name)s's Milestones"
-msgstr ""
+msgstr "%(name)s' - Mejniki"
 
 #. module: project
 #. odoo-python
@@ -785,7 +791,7 @@ msgstr "Dodeljeni čas"
 #: model_terms:ir.ui.view,arch_db:project.portal_my_task
 #: model_terms:ir.ui.view,arch_db:project.portal_my_task_allocated_hours_template
 msgid "Allocated Time:"
-msgstr ""
+msgstr "Dodeljen čas:"
 
 #. module: project
 #: model_terms:ir.ui.view,arch_db:project.edit_project
@@ -934,7 +940,7 @@ msgstr "Zadolžen"
 #: model_terms:ir.ui.view,arch_db:project.project_sharing_project_task_view_tree
 #: model_terms:ir.ui.view,arch_db:project.view_task_search_form_project_fsm_base
 msgid "Assignees"
-msgstr "Udeleženci"
+msgstr "Zadolženi"
 
 #. module: project
 #: model_terms:ir.ui.view,arch_db:project.view_task_search_form_base
@@ -1037,7 +1043,7 @@ msgstr "Povprečna ocena (%)"
 #. module: project
 #: model:ir.model.fields,field_description:project.field_report_project_task_user__rating_avg
 msgid "Average Rating (1-5)"
-msgstr ""
+msgstr "Povprečna ocena (1–5)"
 
 #. module: project
 #: model_terms:ir.ui.view,arch_db:project.view_project_kanban
@@ -1122,7 +1128,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:project.project_task_burndown_chart_report_view_search
 #: model_terms:ir.ui.view,arch_db:project.view_project_kanban
 msgid "Burndown Chart"
-msgstr ""
+msgstr "Grafikon izgorelosti"
 
 #. module: project
 #. odoo-python
@@ -1200,7 +1206,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:project.field_project_task__is_closed
 #: model:ir.model.fields,field_description:project.field_report_project_task_user__is_closed
 msgid "Closed state"
-msgstr ""
+msgstr "Zaprto stanje"
 
 #. module: project
 #: model:ir.model.fields.selection,name:project.selection__project_task_burndown_chart_report__is_closed__closed
@@ -1390,6 +1396,8 @@ msgid ""
 "Create projects to organize your tasks and define a different workflow for "
 "each project."
 msgstr ""
+"Ustvarite projekte za organizacijo nalog in določite drugačen potek dela za "
+"vsak projekt."
 
 #. module: project
 #: model_terms:ir.actions.act_window,help:project.open_view_project_all
@@ -2164,12 +2172,12 @@ msgstr "Zgodovina"
 #. module: project
 #: model:ir.model.fields,field_description:project.field_project_task__html_field_history
 msgid "History data"
-msgstr ""
+msgstr "Zgodovinski podatki"
 
 #. module: project
 #: model:ir.model.fields,field_description:project.field_project_task__html_field_history_metadata
 msgid "History metadata"
-msgstr ""
+msgstr "Metapodatki zgodovine"
 
 #. module: project
 #: model:project.tags,name:project.project_tags_13
@@ -2461,7 +2469,7 @@ msgstr "Prejšnji mesec"
 #. module: project
 #: model:ir.model.fields,field_description:project.field_report_project_task_user__rating_last_value
 msgid "Last Rating (1-5)"
-msgstr ""
+msgstr "Zadnja ocena (1–5)"
 
 #. module: project
 #. odoo-python
@@ -2554,7 +2562,7 @@ msgstr ""
 #. odoo-javascript
 #: code:addons/project/static/src/js/tours/project.js:0
 msgid "Let's create your first <b>task</b>."
-msgstr ""
+msgstr "Ustvarimo vašo prvo <b>nalogo</b>."
 
 #. module: project
 #. odoo-javascript
@@ -2937,7 +2945,7 @@ msgstr "Podatkov še ni!"
 #: model_terms:ir.actions.act_window,help:project.open_view_project_all_config_group_stage
 #: model_terms:ir.actions.act_window,help:project.open_view_project_all_group_stage
 msgid "No projects found. Let's create one!"
-msgstr ""
+msgstr "Ni najdenih projektov. Ustvarimo enega!"
 
 #. module: project
 #: model_terms:ir.actions.act_window,help:project.open_task_type_form
@@ -3232,7 +3240,7 @@ msgstr "Odstotek zadovoljnih ocen"
 #: model_terms:ir.ui.view,arch_db:project.view_task_calendar
 #: model_terms:ir.ui.view,arch_db:project.view_task_form2
 msgid "Personal Stage"
-msgstr ""
+msgstr "Osebna stopnja"
 
 #. module: project
 #: model:ir.model.fields,field_description:project.field_project_task__personal_stage_id
@@ -4080,7 +4088,7 @@ msgstr ""
 #. module: project
 #: model_terms:ir.ui.view,arch_db:project.project_update_default_description
 msgid "Since"
-msgstr "Odkar"
+msgstr "Od"
 
 #. module: project
 #: model:project.tags,name:project.project_tags_12
@@ -4200,7 +4208,7 @@ msgstr "Začetni datum"
 #: model:ir.model.fields,field_description:project.field_project_task_burndown_chart_report__state
 #: model:ir.model.fields,field_description:project.field_report_project_task_user__state
 msgid "State"
-msgstr "Zvezna država ali regija"
+msgstr "Stanje"
 
 #. module: project
 #. odoo-javascript
@@ -4379,7 +4387,7 @@ msgstr "Ocena opravila"
 #. module: project
 #: model:ir.model,name:project.model_project_task_recurrence
 msgid "Task Recurrence"
-msgstr ""
+msgstr "Ponavljanje naloge"
 
 #. module: project
 #: model:ir.model,name:project.model_project_task_type

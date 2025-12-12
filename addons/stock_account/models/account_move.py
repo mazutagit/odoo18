@@ -57,7 +57,8 @@ class AccountMove(models.Model):
         res = super(AccountMove, self).button_draft()
 
         # Unlink the COGS lines generated during the 'post' method.
-        self.mapped('line_ids').filtered(lambda line: line.display_type == 'cogs').unlink()
+        with self.env.protecting(self.env['account.move']._get_protected_vals({}, self)):
+            self.mapped('line_ids').filtered(lambda line: line.display_type == 'cogs').unlink()
         return res
 
     def button_cancel(self):
@@ -287,7 +288,7 @@ class AccountMoveLine(models.Model):
             else:
                 price_unit = self.price_subtotal / self.quantity
         else:
-            price_unit = self.price_unit
+            price_unit = 0
 
         return -price_unit if self.move_id.move_type == 'in_refund' else price_unit
 

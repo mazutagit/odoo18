@@ -79,7 +79,7 @@ class MrpProduction(models.Model):
             workorders = defaultdict(self.env['mrp.workorder'].browse)
             for wo in mo.workorder_ids:
                 account = wo.workcenter_id.expense_account_id or product_accounts['expense']
-                labour_amounts[account] += wo._cal_cost()
+                labour_amounts[account] += wo.company_id.currency_id.round(wo._cal_cost())
                 workorders[account] |= wo
             workcenter_cost = sum(labour_amounts.values())
 
@@ -107,5 +107,5 @@ class MrpProduction(models.Model):
 
     def _post_inventory(self, cancel_backorder=False):
         res = super()._post_inventory(cancel_backorder=cancel_backorder)
-        self.filtered(lambda mo: mo.state == 'done')._post_labour()
+        self.filtered(lambda mo: not mo.reservation_state and mo.state == 'done')._post_labour()
         return res
