@@ -137,6 +137,9 @@ def check_git_branch():
     checkout to match it if needed.
     """
     server = get_odoo_server_url()
+    if not server or platform.system() == 'Windows':
+        _logger.debug('Ignoring git branch check')
+        return
     urllib3.disable_warnings()
     http = urllib3.PoolManager(cert_reqs='CERT_NONE')
     try:
@@ -173,6 +176,9 @@ def check_git_branch():
                             ['/home/pi/odoo/addons/point_of_sale/tools/posbox/configuration/posbox_update.sh'], check=True
                         )
                 except subprocess.CalledProcessError:
+                    # reset local branch name if update failed, to allow new attempt on next restart
+                    with writable():
+                        subprocess.run(git + ['branch', '-m', local_branch], check=False)
                     _logger.exception("Failed to update the code with git.")
                 finally:
                     odoo_restart()
